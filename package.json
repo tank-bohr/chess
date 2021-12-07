@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "tailwindcss --input assets/styles/main.css --output main.css -c tailwind.config.js --postcss postcss.config.js",
+    "watch": "tailwindcss --input assets/styles/main.css --output main.css -c tailwind.config.js --postcss postcss.config.js --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^2.2.19"
+  }
+}
