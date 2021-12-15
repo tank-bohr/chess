@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.board {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-image: url("assets/images/board.svg");
+}
+
+piece {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+}
+
+.white-pawn {
+  background-image: url("assets/images/white-pawn.svg");
+}
+.white-knight {
+  background-image: url("assets/images/white-knight.svg");
+}
+.white-bishop {
+  background-image: url("assets/images/white-bishop.svg");
+}
+.white-rook {
+  background-image: url("assets/images/white-rook.svg");
+}
+.white-queen {
+  background-image: url("assets/images/white-queen.svg");
+}
+.white-king {
+  background-image: url("assets/images/white-king.svg");
+}
+.black-pawn {
+  background-image: url("assets/images/black-pawn.svg");
+}
+.black-knight {
+  background-image: url("assets/images/black-knight.svg");
+}
+.black-bishop {
+  background-image: url("assets/images/black-bishop.svg");
+}
+.black-rook {
+  background-image: url("assets/images/black-rook.svg");
+}
+.black-queen {
+  background-image: url("assets/images/black-queen.svg");
+}
+.black-king {
+  background-image: url("assets/images/black-king.svg");
+}

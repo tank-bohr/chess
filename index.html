@@ -5,25 +5,183 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="main.css" rel="stylesheet">
+  <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
-  <div class="container mt-20 mx-auto w-2/6">
-    <img src="assets/images/board.svg">
-    <div class="flex flex-row">
-      <img src="assets/images/white-pawn.svg">
-      <img src="assets/images/white-knight.svg">
-      <img src="assets/images/white-bishop.svg">
-      <img src="assets/images/white-rook.svg">
-      <img src="assets/images/white-queen.svg">
-      <img src="assets/images/white-king.svg">
-    </div>
-    <div class="flex flex-row">
-      <img src="assets/images/black-pawn.svg">
-      <img src="assets/images/black-knight.svg">
-      <img src="assets/images/black-bishop.svg">
-      <img src="assets/images/black-rook.svg">
-      <img src="assets/images/black-queen.svg">
-      <img src="assets/images/black-king.svg">
+  <div x-data="{
+    square_size: 12.5,
+    pieces: [
+      {
+        name: 'black-rook',
+        left: 0,
+        top: 0
+      },
+      {
+        name: 'black-knight',
+        left: 1,
+        top: 0
+      },
+      {
+        name: 'black-bishop',
+        left: 2,
+        top: 0
+      },
+      {
+        name: 'black-queen',
+        left: 3,
+        top: 0
+      },
+      {
+        name: 'black-king',
+        left: 4,
+        top: 0
+      },
+      {
+        name: 'black-bishop',
+        left: 5,
+        top: 0
+      },
+      {
+        name: 'black-knight',
+        left: 6,
+        top: 0
+      },
+      {
+        name: 'black-rook',
+        left: 7,
+        top: 0
+      },
+      {
+        name: 'black-pawn',
+        left: 0,
+        top: 1
+      },
+      {
+        name: 'black-pawn',
+        left: 1,
+        top: 1
+      },
+      {
+        name: 'black-pawn',
+        left: 2,
+        top: 1
+      },
+      {
+        name: 'black-pawn',
+        left: 3,
+        top: 1
+      },
+      {
+        name: 'black-pawn',
+        left: 4,
+        top: 1
+      },
+      {
+        name: 'black-pawn',
+        left: 5,
+        top: 1
+      },
+      {
+        name: 'black-pawn',
+        left: 6,
+        top: 1
+      },
+      {
+        name: 'black-pawn',
+        left: 7,
+        top: 1
+      },
+      {
+        name: 'white-pawn',
+        left: 0,
+        top: 6
+      },
+      {
+        name: 'white-pawn',
+        left: 1,
+        top: 6
+      },
+      {
+        name: 'white-pawn',
+        left: 2,
+        top: 6
+      },
+      {
+        name: 'white-pawn',
+        left: 3,
+        top: 6
+      },
+      {
+        name: 'white-pawn',
+        left: 4,
+        top: 6
+      },
+      {
+        name: 'white-pawn',
+        left: 5,
+        top: 6
+      },
+      {
+        name: 'white-pawn',
+        left: 6,
+        top: 6
+      },
+      {
+        name: 'white-pawn',
+        left: 7,
+        top: 6
+      },
+      {
+        name: 'white-rook',
+        left: 0,
+        top: 7
+      },
+      {
+        name: 'white-knight',
+        left: 1,
+        top: 7
+      },
+      {
+        name: 'white-bishop',
+        left: 2,
+        top: 7
+      },
+      {
+        name: 'white-queen',
+        left: 3,
+        top: 7
+      },
+      {
+        name: 'white-king',
+        left: 4,
+        top: 7
+      },
+      {
+        name: 'white-bishop',
+        left: 5,
+        top: 7
+      },
+      {
+        name: 'white-knight',
+        left: 6,
+        top: 7
+      },
+      {
+        name: 'white-rook',
+        left: 7,
+        top: 7
+      },
+    ]
+  }">
+    <div class="board">
+      <template x-for="piece in pieces">
+          <piece :class="piece.name" :style="
+            {
+              top: square_size * piece.top + '%',
+              left: square_size * piece.left + '%'
+            }
+          "></piece>
+      </template>
     </div>
   </div>
 </body>
