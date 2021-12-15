@@ -6,175 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="main.css" rel="stylesheet">
   <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="assets/js/main.js"></script>
 </head>
 <body>
   <div x-data="{
     square_size: 12.5,
-    pieces: [
-      {
-        name: 'black-rook',
-        left: 0,
-        top: 0
-      },
-      {
-        name: 'black-knight',
-        left: 1,
-        top: 0
-      },
-      {
-        name: 'black-bishop',
-        left: 2,
-        top: 0
-      },
-      {
-        name: 'black-queen',
-        left: 3,
-        top: 0
-      },
-      {
-        name: 'black-king',
-        left: 4,
-        top: 0
-      },
-      {
-        name: 'black-bishop',
-        left: 5,
-        top: 0
-      },
-      {
-        name: 'black-knight',
-        left: 6,
-        top: 0
-      },
-      {
-        name: 'black-rook',
-        left: 7,
-        top: 0
-      },
-      {
-        name: 'black-pawn',
-        left: 0,
-        top: 1
-      },
-      {
-        name: 'black-pawn',
-        left: 1,
-        top: 1
-      },
-      {
-        name: 'black-pawn',
-        left: 2,
-        top: 1
-      },
-      {
-        name: 'black-pawn',
-        left: 3,
-        top: 1
-      },
-      {
-        name: 'black-pawn',
-        left: 4,
-        top: 1
-      },
-      {
-        name: 'black-pawn',
-        left: 5,
-        top: 1
-      },
-      {
-        name: 'black-pawn',
-        left: 6,
-        top: 1
-      },
-      {
-        name: 'black-pawn',
-        left: 7,
-        top: 1
-      },
-      {
-        name: 'white-pawn',
-        left: 0,
-        top: 6
-      },
-      {
-        name: 'white-pawn',
-        left: 1,
-        top: 6
-      },
-      {
-        name: 'white-pawn',
-        left: 2,
-        top: 6
-      },
-      {
-        name: 'white-pawn',
-        left: 3,
-        top: 6
-      },
-      {
-        name: 'white-pawn',
-        left: 4,
-        top: 6
-      },
-      {
-        name: 'white-pawn',
-        left: 5,
-        top: 6
-      },
-      {
-        name: 'white-pawn',
-        left: 6,
-        top: 6
-      },
-      {
-        name: 'white-pawn',
-        left: 7,
-        top: 6
-      },
-      {
-        name: 'white-rook',
-        left: 0,
-        top: 7
-      },
-      {
-        name: 'white-knight',
-        left: 1,
-        top: 7
-      },
-      {
-        name: 'white-bishop',
-        left: 2,
-        top: 7
-      },
-      {
-        name: 'white-queen',
-        left: 3,
-        top: 7
-      },
-      {
-        name: 'white-king',
-        left: 4,
-        top: 7
-      },
-      {
-        name: 'white-bishop',
-        left: 5,
-        top: 7
-      },
-      {
-        name: 'white-knight',
-        left: 6,
-        top: 7
-      },
-      {
-        name: 'white-rook',
-        left: 7,
-        top: 7
-      },
-    ]
+    fen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
   }">
+    <div class="fen mt-3 mx-3">
+      <input class="border border-solid w-1/2 px-1" type="text" x-model="fen">
+    </div>
     <div class="board mt-3 mx-3">
-      <template x-for="piece in pieces">
+      <template x-for="piece in fromFEN(fen)">
           <piece :class="piece.name" :style="
             {
               top: square_size * piece.top + '%',
