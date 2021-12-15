@@ -1,2 +1,3 @@
 node_modules/
-./main.css
+main.css
+!assets/styles/main.css
